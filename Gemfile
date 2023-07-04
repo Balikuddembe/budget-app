@@ -45,6 +45,10 @@ gem 'bootsnap', require: false
 # Use Sass to process CSS
 # gem "sassc-rails"
 
+# Add devise gem for authentication
+
+gem 'devise'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

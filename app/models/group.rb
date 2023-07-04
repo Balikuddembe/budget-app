@@ -5,6 +5,6 @@ class Group < ApplicationRecord
     belongs_to :user, class_name: 'User', foreign_key: 'user_id'
 
     # validations
-    validates :name, presence: true, length: {in 1..25}
+    validates :name, presence: true, length: { in: 1..25 }
     validates :icon, presence: true
 end
