@@ -1,18 +1,16 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
     # Define abilities for the user here. For example:
     #
-    user ||= User.new()
-    can :read, :all?
+    user ||= User.new # if the user is a guest
+    can :read, :all
     if user.admin?
       can :manage, :all
     else
       can :manage, Group, user_id: user.id
-      can :manage, Expense, user_id: user_id
+      can :manage, Expense, user_id: user.id
       can :read, :all
     end
     #   return unless user.present?
