@@ -49,6 +49,10 @@ gem 'bootsnap', require: false
 
 gem 'devise'
 
+# Add cancancan gem for authorization
+
+gem 'cancancan'
+
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
