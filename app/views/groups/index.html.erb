@@ -1,0 +1,24 @@
+<div class="categories">
+  <% if @groups.empty? %>
+    <h3 class="get-started">Get Started</h3>
+    <span class="div">Add your first budget by clicking on the button below</span>
+    
+  <% else %>
+    <% @groups.each do |group| %>
+      <div class="category-container">
+        <div class="category-icon" style="width: 10%">
+          <%= image_tag group.icon, alt: 'icon', class: "img", style: "width: 50%" %>
+        </div>
+        <%= link_to group_path(group.id.to_s) do %>
+          <p class="category-name"><%= group.name %></p>
+        <% end %>
+        <p>$<%= group.expenses.sum(:amount) %></p>
+        <%= link_to 'Learn more', group_path(group.id.to_s) %>
+        <p>by <%= current_user.name %></p>
+      </div>
+    <% end %>
+  <% end %>
+  <button class="button">
+    <%= link_to 'Add New Category'.html_safe, new_group_path, class: "link" %>
+  </button>
+</div>

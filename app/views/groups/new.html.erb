@@ -1,0 +1,20 @@
+<h1>Add New Category</h1>
+
+<%= form_with model: @group, url: groups_path, local: true do |f| %>
+  <%= f.text_field :name, autofocus: true, placeholder: "Category Name" %>
+  
+  <div class="form-group">
+    <%= f.label :icon, "Select Icon" %>
+    <%= f.collection_select(:icon, [
+        ['cash.png', 'Investment 💵'],
+        ['hospital.png', 'Health 🏥'],
+        ['shopping.png', 'Shopping 🛍️'],
+        ['sports.png', 'Sports ⚽'],
+        ['popcorn.png', 'Movies 🍿'],
+        ['travel.png', 'Travel ✈️'],
+        ['more.png', 'Others 📓']
+      ], :first, :last, { prompt: 'Select Icon' }, { class: 'form-control' }) %>
+  </div>
+
+  <%= f.submit "Save" %>
+<% end %>
