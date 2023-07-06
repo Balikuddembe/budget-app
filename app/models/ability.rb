@@ -12,6 +12,7 @@ class Ability
       can :manage, Group, user_id: user.id
       can :manage, Expense, user_id: user.id
       can :read, :all
+      can :read, :all
     end
     #   return unless user.present?
     #   can :read, :all
