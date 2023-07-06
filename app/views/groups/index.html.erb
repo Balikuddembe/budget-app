@@ -1,24 +1,31 @@
+<%= render "shared/nav" %>
+
 <div class="categories">
   <% if @groups.empty? %>
     <h3 class="get-started">Get Started</h3>
     <span class="div">Add your first budget by clicking on the button below</span>
     
   <% else %>
+
+  <div class="categories-container">
     <% @groups.each do |group| %>
-      <div class="category-container">
-        <div class="category-icon" style="width: 10%">
-          <%= image_tag group.icon, alt: 'icon', class: "img", style: "width: 50%" %>
+      <div class="category-card">
+        <div class="category-icon">
+          <%= image_tag group.icon, alt: 'icon', class: "icon" %>
         </div>
-        <%= link_to group_path(group.id.to_s) do %>
+        <div class="card-text">
+        <%= link_to group_path(group.id.to_s), style: "text-decoration: none;" do %>
           <p class="category-name"><%= group.name %></p>
         <% end %>
         <p>$<%= group.expenses.sum(:amount) %></p>
-        <%= link_to 'Learn more', group_path(group.id.to_s) %>
-        <p>by <%= current_user.name %></p>
+        <%= link_to 'Learn more →', group_path(group.id.to_s), style: "text-decoration: none;", class: "learn" %>
+        <p class="user">by <%= current_user.name %></p>
+        </div>
       </div>
     <% end %>
   <% end %>
-  <button class="button">
-    <%= link_to 'Add New Category'.html_safe, new_group_path, class: "link" %>
-  </button>
+    <div class="link-to">
+      <%= link_to 'Add New Category'.html_safe, new_group_path, class: "btn btn-success" %>
+    </div>
+  </div>
 </div>
