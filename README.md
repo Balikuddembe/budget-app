@@ -75,7 +75,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone  https://github.com/paulinagonzalezc/budget-app-rails
+  git clone  https://github.com/Balikuddembe/budget-app.git
 ```
 
 -

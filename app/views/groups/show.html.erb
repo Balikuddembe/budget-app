@@ -1,4 +1,7 @@
-<%= render "shared/nav" %>
+<div class="header">
+    <%= link_to "←", groups_path, class:"arrow-back" %>
+    <h2 class="groups-title">Transactions</h2>
+</div>
 
 <div class="transactions-container">
   <div class="transactions-title">
@@ -14,14 +17,16 @@
       <div class="card-text">
         <div class="name-amount">
           <h4><%= expense.name %></h4>
-          <p>$<%= expense.amount %></p>
+          <p class="amount">$<%= expense.amount %></p>
         </div>
         <p class="date"><%= expense.created_at.strftime('%d %B, %Y') %></p>
       </div>
     </div>
   <% end %>
 
-  <%= link_to new_group_expense_path(group_id: @group.id) do %>
-    <button class="btn btn-success but">Add new transaction</button>
-  <% end %>
+  <div class="fixed-button">
+    <%= link_to new_group_expense_path(group_id: @group.id) do %>
+      <button class="btn btn-success but">Add new transaction</button>
+    <% end %>
+  </div>
 </div>
