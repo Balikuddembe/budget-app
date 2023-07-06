@@ -1,0 +1,23 @@
+<div class="expenses-container">
+<h3><%= @group.name %></h3>
+<p>Total: $<%= @group.expenses.sum(:amount) %></p>
+
+  <% @expenses.each do |expense| %>
+    <ul>
+      <li class="flex-row">
+        <div class="image">
+          <%= image_tag @group.icon %>
+        </div>
+        <div class="info">
+          <div class="name-amount">
+            <h3><%= expense.name %></h3>
+            <h3>$<%= expense.amount %></h3>
+          </div>
+          <p class="div"><%= expense.created_at.strftime('%d %B, %Y') %></p>
+        </div>
+      </li>
+    </ul>
+  <% end %>
+
+  <%= link_to new_group_expense_path(group_id: @group.id) do %><button class="btn group-btn">Add new transaction</button><% end %>
+</div>
