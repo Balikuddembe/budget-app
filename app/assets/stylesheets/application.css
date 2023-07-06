@@ -1,16 +1,190 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 @import 'bootstrap';
+
+body {
+  background-color: #f6f6f6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+  text-align: center;
+  margin: 3rem;
+}
+
+/* Nav */
+
+nav {
+  background-color: #3778c2;
+}
+
+.nav-link,
+.navbar-brand {
+  color: white;
+}
+
+/* Splash screen */
+
+.splash-container {
+  /* border: 1px solid gray; */
+  border-radius: 10px;
+  width: 50rem;
+  margin: auto;
+  margin-top: 4rem;
+}
+
+.logo {
+  margin-top: 4rem;
+  width: 40rem;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtitle {
+  margin-top: 2rem;
+}
+
+.sign-up,
+.log-in {
+  margin-bottom: 0.5rem;
+}
+
+.notice,
+.alert {
+  padding: 0;
+  margin: 0;
+}
+
+.shadow {
+  background-color: rgba(188, 188, 188, 0.647);
+  height: 13rem;
+}
+
+/* sign up */
+
+.form-control {
+  width: 20rem;
+  margin: 10px 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions {
+  text-align: center;
+}
+
+/* Groups/categories */
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.category-card {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid gainsboro;
+  border-radius: 10px;
+  width: 23rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+}
+
+.category-icon {
+  justify-self: center;
+}
+
+.icon {
+  width: 7rem;
+  height: 7rem;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.link-to {
+  margin-top: 2rem;
+}
+
+.category-name {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 22px;
+  color: #434b54;
+}
+
+.learn {
+  font-size: 15px;
+  color: lightslategray;
+}
+
+.user {
+  margin-top: 1rem;
+  font-size: 12px;
+}
+
+/* transactions */
+
+.transactions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.transaction-card {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid gainsboro;
+  border-radius: 10px;
+  width: 25rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+}
+
+.transactions-title {
+  display: flex;
+  padding: 10px;
+  gap: 7rem;
+  border: 2px solid gainsboro;
+  margin-bottom: 2rem;
+}
+
+.parr {
+  margin: 0;
+}
+
+.name-amount {
+  font-size: 12px;
+}
+
+.date {
+  font-size: 12px;
+  display: flex;
+  justify-content: left;
+}
+
+.but {
+  margin-top: 2rem;
+}

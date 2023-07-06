@@ -1,23 +1,27 @@
-<div class="expenses-container">
-<h3><%= @group.name %></h3>
-<p>Total: $<%= @group.expenses.sum(:amount) %></p>
+<%= render "shared/nav" %>
+
+<div class="transactions-container">
+  <div class="transactions-title">
+    <p class="parr"><%= @group.name %></p>
+    <p class="parr">Total: $<%= @group.expenses.sum(:amount) %></p>
+  </div>
 
   <% @expenses.each do |expense| %>
-    <ul>
-      <li class="flex-row">
-        <div class="image">
-          <%= image_tag @group.icon %>
+    <div class="transaction-card">
+      <div class="category-icon">
+        <%= image_tag @group.icon, alt: 'icon', class: "icon" %>
+      </div>
+      <div class="card-text">
+        <div class="name-amount">
+          <h4><%= expense.name %></h4>
+          <p>$<%= expense.amount %></p>
         </div>
-        <div class="info">
-          <div class="name-amount">
-            <h3><%= expense.name %></h3>
-            <h3>$<%= expense.amount %></h3>
-          </div>
-          <p class="div"><%= expense.created_at.strftime('%d %B, %Y') %></p>
-        </div>
-      </li>
-    </ul>
+        <p class="date"><%= expense.created_at.strftime('%d %B, %Y') %></p>
+      </div>
+    </div>
   <% end %>
 
-  <%= link_to new_group_expense_path(group_id: @group.id) do %><button class="btn group-btn">Add new transaction</button><% end %>
+  <%= link_to new_group_expense_path(group_id: @group.id) do %>
+    <button class="btn btn-success but">Add new transaction</button>
+  <% end %>
 </div>
