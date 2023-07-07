@@ -75,7 +75,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone  https://github.com/paulinagonzalezc/budget-app-rails
+  git clone  https://github.com/Balikuddembe/budget-app.git
 ```
 
 -
@@ -113,7 +113,7 @@ To run tests, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Paulina Gonzalez**
+👤 **Emmanuel Balikuddembe**
 
 - GitHub: [@Balikuddembe](https://github.com/Balikuddembe)
 - Twitter: [@BalixEmma](https://twitter.com/BalixEmma)

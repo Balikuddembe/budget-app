@@ -1,12 +1,13 @@
-<%= render "shared/nav" %>
-<h1 class="title">Add New Category</h1>
+<div class="header">
+    <%= link_to "←", root_path, class:"arrow-back" %>
+    <h2 class="groups-title">Add New Category</h2>
+</div>
 
 <div class="form-container">
 <%= form_with model: @group, url: groups_path, local: true do |f| %>
-  <%= f.text_field :name, autofocus: true, placeholder: "Category Name", class:"form-control" %>
+  <%= f.text_field :name, autofocus: true, placeholder: "Category Name", class:"form-control log" %>
   
   <div class="form-group">
-    <%= f.label :icon, "Select Icon" %>
     <%= f.collection_select(:icon, [
         ['cash.png', 'Investment 💵'],
         ['hospital.png', 'Health 🏥'],
@@ -15,9 +16,12 @@
         ['popcorn.png', 'Movies 🍿'],
         ['travel.png', 'Travel ✈️'],
         ['more.png', 'Others 📓']
-      ], :first, :last, { prompt: 'Select Icon' }, { class: 'form-control' }) %>
+      ], :first, :last, { prompt: 'Select Icon' }, { class: 'form-control log' }) %>
   </div>
-
-  <%= f.submit "Save", class:"btn btn-primary sign-up" %>
+  <div class="fixed-button">
+    <div class="save-div link-to">
+      <%= f.submit "Save", class:"save-button-des"%>
+    </div>
+  </div>
 <% end %>
 </div>

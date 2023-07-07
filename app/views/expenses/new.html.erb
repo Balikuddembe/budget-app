@@ -1,26 +1,28 @@
-<%= render "shared/nav" %>
-<div class="back button">
-    <%= link_to 'Back to Category Page'.html_safe, group_path(@group.id), class: "back"%>
+<div class="header">
+    <%= link_to "←", group_path(@group.id), class:"arrow-back" %>
+    <h2 class="groups-title">Add a New Transaction</h2>
 </div>
-
-<h3 class="title">Add a new transaction</h3>
 
 <div class="form-container">
   <%= form_with model: @expense, url: group_expenses_path, local: true do |f| %>
-    <%= f.text_field :name, autofocus: true, placeholder: "Name", class: "form-control" %>
-    <%= f.number_field :amount, autofocus: true, placeholder: "Amount", class: "form-control" %>
+    <%= f.text_field :name, autofocus: true, placeholder: "Name", class: "form-control log" %>
+    <%= f.number_field :amount, autofocus: true, placeholder: "Amount", class: "form-control log" %>
     <div class="checkbox-btn">
-      <%= f.label :group_ids, "Select one or more categories:" %>
+      <%= f.label :group_ids, "Select one or more categories:", class: "label-text" %>
       <div class="checkboxes">
         <%= f.collection_check_boxes :group_ids, current_user.groups, :id, :name do |b| %>
           <div class="form-control">
             <%= b.check_box %>
-            <%= b.label %>
+            <%= b.label%>
           </div>
         <% end %>
       </div>
-      
-      <%= f.submit "Save", class: "btn btn-primary sign-up" %>
+
+      <div class="fixed-button">
+        <div class="save-div link-to">
+            <%= f.submit "Save", class: "save-button-des" %>
+        </div>
+      </div>
     </div>
   <% end %>
 </div>
