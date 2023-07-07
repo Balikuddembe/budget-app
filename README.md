@@ -113,7 +113,7 @@ To run tests, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Paulina Gonzalez**
+👤 **Emmanuel Balikuddembe**
 
 - GitHub: [@Balikuddembe](https://github.com/Balikuddembe)
 - Twitter: [@BalixEmma](https://twitter.com/BalixEmma)
