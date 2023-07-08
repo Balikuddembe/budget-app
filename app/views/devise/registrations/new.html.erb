@@ -1,0 +1,36 @@
+<div class="header">
+    <%= link_to "←", root_path, class:"arrow-back" %>
+    <h2 class="log-in-title">Create an account</h2>
+</div>
+
+<div class="form-container">
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "Name",class: "form-control log"%>
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"Email", class: "form-control log"%>
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <% if @minimum_password_length %>
+    <em class="minimum-words">(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password", class: "form-control log" %>
+  </div>
+
+  <div class="form-group mx-sm-3 mb-2">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Confirm password", class: "form-control log" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class: "btn btn-primary new-sign-up" %>
+  </div>
+  <div class="log-new">
+    <%= render "devise/shared/links" %>
+  </div>
+<% end %>
+</div>

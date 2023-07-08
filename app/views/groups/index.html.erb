@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %> 
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="groups-header">
+    <h2 class="groups-title">Snapbudget</h2>
+</div>
+
+
+<div class="categories">
+  <% if @groups.empty? %>
+  <div class="get-started">
+    <h3 class="started">Get Started</h3>
+    <span class="div">Add your first budget by clicking on the button below</span>
+  </div>
+  <% else %>
+
+  <div class="categories-container">
+    <% @groups.each do |group| %>
+      <div class="category-card">
+        <div class="category-icon">
+          <%= image_tag group.icon, alt: 'icon', class: "icon" %>
+        </div>
+        <div class="card-text">
+          <div class="top-card">
+            <%= link_to group_path(group.id.to_s), style: "text-decoration: none;" do %>
+              <p class="category-name"><%= group.name %></p>
+            <% end %>
+            <p class="amount">$<%= group.expenses.sum(:amount) %></p>
+          </div>
+          <div class="bottom-card">
+            <p class="date"><%= group.created_at.strftime('%d %B, %Y') %></p>
+            <p class="user">by <%= current_user.name %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="fixed-button">
+    <div class="link-to">
+      <%= link_to 'Add New Category'.html_safe, new_group_path, class: "butt btn-success button-link" %>
+    </div>
+  </div>
+
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="header">
+    <%= link_to "←", groups_path, class:"arrow-back" %>
+    <h2 class="groups-title">Transactions</h2>
+</div>
+
+<div class="transactions-container">
+  <div class="transactions-title">
+    <p class="parr"><%= @group.name %></p>
+    <p class="parr">Total: $<%= @group.expenses.sum(:amount) %></p>
+  </div>
+
+  <% @expenses.each do |expense| %>
+    <div class="transaction-card">
+      <div class="category-icon">
+        <%= image_tag @group.icon, alt: 'icon', class: "icon" %>
+      </div>
+      <div class="card-text">
+        <div class="name-amount">
+          <h4><%= expense.name %></h4>
+          <p class="amount">$<%= expense.amount %></p>
+        </div>
+        <p class="date"><%= expense.created_at.strftime('%d %B, %Y') %></p>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="fixed-button">
+    <%= link_to new_group_expense_path(group_id: @group.id) do %>
+      <button class="btn btn-success but">Add new transaction</button>
+    <% end %>
+  </div>
+</div>

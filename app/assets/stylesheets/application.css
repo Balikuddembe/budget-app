@@ -1,0 +1,448 @@
+@import 'bootstrap';
+
+body {
+  background-color: #f6f6f6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title {
+  text-align: center;
+  margin: 3rem;
+}
+
+/* Nav */
+
+nav {
+  background-color: #3778c2;
+  border: 1px solid #3778c2;
+  padding-bottom: 0 !important;
+  color: white;
+}
+
+.nav-link,
+.navbar-brand {
+  color: white;
+  margin-left: 10px;
+}
+
+/* Splash screen */
+.app-title {
+  font-family: 'Satisfy', cursive;
+  font-size: 50px;
+  color: white;
+}
+
+.splash-container {
+  background-color: #3778c2;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 200px;
+  margin: 0;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.sign-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subtitle {
+  margin-top: 2rem;
+  font-size: 15px;
+  color: white;
+}
+
+.sub-sub {
+  font-size: 12px;
+  color: white;
+}
+
+.sign-up,
+.log-in {
+  margin-bottom: 0.5rem;
+  width: 10rem;
+  background-color: #33b93a;
+  color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+}
+
+.sign-up {
+  border: none;
+}
+
+.sign-up:hover {
+  background-color: #237f27;
+}
+
+.session-btn {
+  background-color: #3068a5;
+  border: 1px solid #3068a5;
+  padding-top: 4px;
+  height: 4rem;
+  width: 22rem;
+  margin: 20px 0;
+}
+
+.log-in {
+  background-color: #3068a5;
+  border: 1px solid #3068a5;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 4px;
+  height: 2rem;
+}
+
+.log-in:hover {
+  background-color: #769fce;
+  border: none;
+  color: white;
+}
+
+.remember-me {
+  color: gray;
+}
+
+.log {
+  border-radius: 0%;
+  height: 4rem;
+  width: 22rem;
+}
+
+.notice,
+.alert {
+  padding: 0;
+  margin: 0;
+}
+
+/* sign up */
+
+.sign-up-title,
+.log-in-title {
+  color: white;
+  font-weight: 100;
+  text-align: center;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.header {
+  width: 100vw;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 10fr;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  background: rgb(55, 119, 193);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(55, 119, 193, 1) 0%,
+      rgba(43, 94, 153, 1) 100%
+    );
+}
+
+.arrow-back {
+  color: white;
+  font-size: 30px;
+  font-weight: 100;
+  justify-self: center;
+  margin-left: 25px;
+  text-decoration: none;
+}
+
+.new-sign-up {
+  background-color: #33b93a;
+  border: none;
+  padding-top: 4px;
+  height: 4rem;
+  width: 22rem;
+  margin: 20px 0;
+}
+
+.new-sign-up:hover {
+  background-color: #237f27;
+}
+
+.log-new {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  margin-top: 2rem;
+}
+
+.actions {
+  text-align: center;
+}
+
+.minimum-words {
+  color: gray;
+}
+
+.forgot-pass {
+  color: lightgray;
+}
+
+/* Groups/categories */
+
+.groups-header {
+  width: 100vw;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 7rem;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(55, 119, 193, 1) 0%,
+      rgba(43, 94, 153, 1) 100%
+    );
+}
+
+.groups-title {
+  color: white;
+  font-weight: 100;
+  text-align: center;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.fixed-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+}
+
+.btn-success {
+  width: 25rem;
+  height: 6rem;
+  background-color: #33b93a;
+  font-size: 20px;
+  border: none;
+  padding: 5px;
+  position: relative;
+}
+
+.btn-success::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 2px solid white;
+}
+
+.save-button-des {
+  width: 22rem;
+  height: 6rem;
+  background-color: #33b93a;
+  font-size: 20px;
+  border: none;
+  padding: 5px;
+  position: fixed;
+  bottom: 20px;
+  color: white;
+}
+
+.butt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 5rem;
+}
+
+.get-started {
+  margin: 2rem 1rem 25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.select-icon {
+  color: gray;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.category-card {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid gainsboro;
+  background-color: white;
+  width: 22rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 10px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+}
+
+.category-icon {
+  justify-self: center;
+}
+
+.icon {
+  width: 7rem;
+  height: 7rem;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-card,
+.bottom-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link-to {
+  margin-top: 2rem;
+}
+
+.category-name {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 22px;
+  color: #434b54;
+}
+
+.learn {
+  font-size: 15px;
+  color: lightslategray;
+}
+
+.user {
+  font-size: 12px;
+}
+
+.label-text {
+  color: gray;
+}
+
+/* transactions */
+
+.transactions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.transaction-card {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid gainsboro;
+  background-color: white;
+  width: 22rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 10px;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+}
+
+@media only screen and (max-width: 600px) {
+  .transaction-card {
+    width: 22rem;
+  }
+
+  .category-card {
+    width: 22rem;
+  }
+
+  .logo {
+    width: 18rem;
+  }
+
+  .date {
+    font-size: 10px;
+  }
+
+  .btn-success {
+    width: 22rem;
+    margin: auto;
+    height: 6rem;
+    background-color: #33b93a;
+    font-size: 22px;
+    border: none;
+    position: relative;
+  }
+
+  .butt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 5rem;
+  }
+}
+
+.transactions-title {
+  display: flex;
+  padding: 10px;
+  gap: 7rem;
+  border: 2px solid gainsboro;
+  background-color: white;
+  margin-bottom: 2rem;
+}
+
+.parr {
+  margin: 0;
+}
+
+.name-amount {
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.date {
+  font-size: 12px;
+  display: flex;
+  justify-content: left;
+}
+
+.but {
+  margin-top: 2rem;
+}

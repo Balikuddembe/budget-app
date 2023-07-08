@@ -1,0 +1,27 @@
+<div class="header">
+    <%= link_to "←", root_path, class:"arrow-back" %>
+    <h2 class="groups-title">Add New Category</h2>
+</div>
+
+<div class="form-container">
+<%= form_with model: @group, url: groups_path, local: true do |f| %>
+  <%= f.text_field :name, autofocus: true, placeholder: "Category Name", class:"form-control log" %>
+  
+  <div class="form-group">
+    <%= f.collection_select(:icon, [
+        ['cash.png', 'Investment 💵'],
+        ['hospital.png', 'Health 🏥'],
+        ['shopping.png', 'Shopping 🛍️'],
+        ['sports.png', 'Sports ⚽'],
+        ['popcorn.png', 'Movies 🍿'],
+        ['travel.png', 'Travel ✈️'],
+        ['more.png', 'Others 📓']
+      ], :first, :last, { prompt: 'Select Icon' }, { class: 'form-control log' }) %>
+  </div>
+  <div class="fixed-button">
+    <div class="save-div link-to">
+      <%= f.submit "Save", class:"save-button-des"%>
+    </div>
+  </div>
+<% end %>
+</div>
